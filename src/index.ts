@@ -1,4 +1,5 @@
 import express from "express";
+import { calculateResponse, totalPenalty } from "./util/tracker.js";
 
 const app = express();
 const PORT = 3000;
@@ -16,7 +17,8 @@ app.post('/analyze-deadlines', (req, res) => {
     }
     res.json({
         "company": company,
-        "analysis": ""
+        "analysis": calculateResponse(obligations),
+        "totalPenaltyExposureIfLateToday": totalPenalty(calculateResponse(obligations))
     })
 })
 
