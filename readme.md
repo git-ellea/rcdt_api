@@ -83,7 +83,7 @@ Analyzes compliance obligations and returns risk levels based on how close the d
 
 ---
 
-# Example Response
+# Example Response (As of 12/03/2026)
 
 ```json
 {
